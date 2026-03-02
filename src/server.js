@@ -313,6 +313,10 @@ const app = express();
 app.disable("x-powered-by");
 app.use(express.json({ limit: "1mb" }));
 
+app.get("/styles.css", (_req, res) => {
+  res.sendFile(path.join(process.cwd(), "src", "public", "styles.css"));
+});
+
 app.get("/healthz", async (_req, res) => {
   let gateway = "unconfigured";
   if (isConfigured()) {

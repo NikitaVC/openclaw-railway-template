@@ -8,6 +8,7 @@ RUN apt-get update \
     gosu \
     procps \
     python3 \
+    tmux \
     build-essential \
     zip \
   && rm -rf /var/lib/apt/lists/*
